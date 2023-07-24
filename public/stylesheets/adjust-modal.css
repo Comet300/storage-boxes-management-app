@@ -1,0 +1,91 @@
+.adjust .close {
+    display: none;
+    pointer-events: none;
+}
+
+*{
+    zoom: 100%;
+}
+
+
+.modal-body-adjust .outerButton {
+    display: inline-block;
+    min-width: 150px;
+}
+
+.modal-body-adjust .flexy {
+    margin: 0;
+}
+
+.modal-body-adjust .buttonContent {
+    color: black;
+}
+
+@media only screen and (max-width: 350px) {
+    .hide {
+        display: none;
+    }
+
+    .modal-body-adjust .buttonContent {
+        display: none;
+    }
+
+    .modal-body-adjust .outerButton {
+        min-width: 60px;
+        width: auto;
+    }
+}
+
+
+.modal-body-adjust {
+    margin-bottom: 10px;
+}
+
+.modal-body-adjust .flexy {
+    width: 100%;
+}
+
+.modal-content .modal-body-adjust #pret {
+    position: relative;
+    left: 8%;
+    padding: 2px 16px;
+}
+
+.input-price {
+    position: relative;
+    left: 8%;
+    border: none;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 50px;
+    font-size: 3vw;
+    width: 24vw;
+    display: block;
+    margin: 10px 16px;
+}
+
+.input-price:focus{
+    outline: none;
+}
+
+.modal-body-adjust label{
+    position: relative;
+    left: 8%;
+    padding: 2px 16px;
+    font-size: 3.3vw;
+    color:#fff;
+}
+
+.modal-body-adjust .area-wrap{
+    margin-bottom: 50px;
+}
+
+.price-line{
+    display:inline-block;
+}
+.price-line *{
+    display:inline-block;
+    color:#fff;
+    font-size: 3vw;
+}

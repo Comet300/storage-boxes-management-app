@@ -1,0 +1,601 @@
+/*De inlocuit input din meniu cu hiv si hidden form!!!*/
+
+* {
+  zoom: 100%;
+}
+
+/*MOST MOBILE PHONES*/
+@media only screen and (min-width: 50px) and (max-width: 480px) {
+
+
+  .btn-search svg {
+    width: 1.2rem;
+
+  }
+
+  .btn-menu svg {
+    width: 1rem;
+
+  }
+
+  #boxSelection {
+    width: 100% !important;
+  }
+
+  .search-modal-body .message-avatar {
+    font-size: 4vw;
+  }
+
+  .search-modal-body .message-body p {
+    font-size: 2.5vw;
+  }
+
+  .search-modal-body .message {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .levelControl {
+    top: calc(6vh + 15px);
+    left: 0;
+    min-width: 0;
+    width: 18vw;
+  }
+
+  .logout {
+    font-size: 12px;
+    padding-right: 15px;
+
+  }
+
+  .sizeControl * {
+    width: 7vw;
+    min-width: unset;
+  }
+
+  .menuButton {
+    width: 8vw;
+  }
+
+  .search-modal {
+    top: 130px;
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 100%;
+    height: 3px;
+    margin-bottom: 5px;
+  }
+
+  .change .bar1 {
+    transform: rotate(-45deg) translate(-4px, 4px);
+  }
+
+  .levelControl .up {
+    min-width: unset;
+    width: 5vw;
+  }
+
+  #levelLabel {
+    font-size: 3.5vw;
+    min-width: unset;
+  }
+
+  .levelControl .down {
+    min-width: unset;
+    width: 5vw;
+  }
+
+  .menu {
+    width: 100%;
+    z-index: 50;
+  }
+
+  .layer {
+    position: absolute;
+    margin: 0;
+    margin-top: 2vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 70%;
+  }
+
+  .outerButton {
+    min-height: 35px;
+  }
+
+  .main .outerButton {
+    width: 45%;
+  }
+
+  .return {
+    font-size: 2.5vw;
+  }
+
+  .header {
+    font-size: 3.5vw;
+    height: 5%;
+    margin-bottom: 20px;
+  }
+
+  .boxData label {
+    font-size: 3vw;
+    margin-top: 10px;
+  }
+
+  .boxData .field {
+    width: 75%;
+    font-size: 2.5vw;
+    padding: 13px;
+  }
+
+  .file-label {
+    font-size: 2.5vw !important;
+  }
+
+  .pret {
+    font-size: 2.5vw !important;
+  }
+
+  .payments .content {
+    font-size: 2.5vw !important;
+  }
+
+  .payments {
+    width: 70%;
+  }
+
+  .modal-body-pay input,
+  select,
+  button {
+    font-size: 2.5vw !important;
+  }
+
+  .searchbox #search {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .searchbox #close {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .years select {
+    overflow-y: scroll;
+  }
+
+  .modal-body-adjust label {
+    font-size: 2.5vw !important;
+  }
+
+  .input-price {
+    font-size: 2.5vw !important;
+  }
+
+
+  button .fas {
+    font-size: 1rem;
+    color: #555;
+    transition: .3s;
+  }
+
+
+}
+
+
+/*MOBILE PHONES LANDSCAPE*/
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 900px) and (orientation:landscape) {
+
+  .modal-body-move #boxSelection {
+    width: 100% !important;
+  }
+
+  html {
+    /* Rotate the content container */
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    /* Set content width to viewport height */
+    width: 100vh;
+    /* Set content height to viewport width */
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    position: fixed
+  }
+
+  .menuButton {
+    right: 20%;
+    transform: translateY(-50%) scale(.5);
+  }
+
+  .layer {
+    position: absolute;
+    margin: 0;
+    margin-top: 2vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65vw;
+    height: 70%;
+  }
+
+  .levelControl .up {
+    min-width: 0;
+    width: 3vw;
+  }
+
+  .levelControl .down {
+    min-width: 0;
+    width: 3vw;
+  }
+
+  .levelControl {
+    position: absolute;
+    left: 2.5%;
+    top: calc(6vh + 15px);
+    width: auto;
+  }
+
+
+  /*
+  .menu {
+    width: 100%;
+    z-index: 50;
+  }
+
+  .menuButton{
+    transform: translateY(-50%) scale(.5);
+  }
+
+
+
+  .sizeControl * {
+    display: inline;
+    width: 2vw;
+    min-width: 25px;
+  }
+
+  #levelLabel {
+    min-width: unset;
+    margin: 0;
+    font-size: 2.3vw !important;
+  }
+
+
+*/
+}
+
+
+
+
+
+
+
+
+
+/*tablets*/
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+
+
+  .modal-content .hide {
+    display: none !important;
+  }
+
+  .modal-body-pay p {
+    font-size: 2.5vw;
+  }
+
+  .modal-header h2 {
+    font-size: 3vw;
+  }
+
+  .modal-body-pay #selection {
+    width: 20%;
+    font-size: 2vw;
+  }
+
+  .modal-body-move label {
+    font-size: 2.5vw;
+  }
+
+  .modal-body-move #boxSelection {
+    padding: 15px;
+    font-size: 2vw;
+    width: 80%;
+    position: relative;
+    top: 10px;
+  }
+
+  .searchbox {
+    height: 8vh;
+    top: 60px
+  }
+
+  .search-modal-body .message-avatar {
+    position: relative;
+    left: 1%;
+    font-size: 3vw;
+  }
+
+  .search-modal-body .message-body p {
+    font-size: 2vw;
+  }
+
+  .search-modal-body .message {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .menu {
+    width: 100%;
+    z-index: 50;
+  }
+
+  .layer {
+    position: absolute;
+    margin: 0;
+    margin-top: 2vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65vw;
+  }
+
+  .buttonContent {
+    font-size: 2.5vw;
+  }
+
+  .modal-body-main {
+    display: block;
+  }
+
+  .modal-content .main .outerButton {
+    width: 50%;
+    display: block;
+  }
+
+
+  .outerButton {
+    min-height: 60px;
+  }
+
+  .return {
+    font-size: 1.8vw;
+  }
+
+  .header {
+    font-size: 3vw;
+    height: 10%;
+    margin-bottom: 10px;
+  }
+
+  .boxData label {
+    font-size: 2.3vw;
+    margin-top: 10px;
+  }
+
+  .boxData .field {
+    width: 75%;
+    font-size: 2vw;
+  }
+
+  .file-label {
+    font-size: 2.5vw !important;
+  }
+
+  .pret {
+    font-size: 2.5vw !important;
+  }
+
+  .payments .content {
+    font-size: 2.5vw !important;
+  }
+
+  .payments {
+    width: 70%;
+  }
+
+  .modal-body-pay input,
+  select,
+  button {
+    font-size: 2.5vw !important;
+  }
+
+  .years select {
+    overflow-y: scroll;
+  }
+
+  .modal-body-adjust label {
+    font-size: 2.5vw !important;
+  }
+
+  .input-price {
+    font-size: 2.5vw !important;
+  }
+
+}
+
+
+/*tablet-desktop adjustment*/
+@media only screen and (min-device-width:1025px) and (max-device-width:1277px) {
+
+  .everything {
+    height: 100vh;
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .modal-body-pay p {
+    font-size: 2.5vw;
+  }
+
+  .modal-header h2 {
+    font-size: 3vw;
+  }
+
+  .modal-body-pay #selection {
+    width: 20%;
+    font-size: 2vw;
+  }
+
+  .modal-body-move label {
+    font-size: 2.5vw;
+  }
+
+  .modal-body-move #boxSelection {
+    padding: 15px;
+    font-size: 2vw;
+    width: 80%;
+    position: relative;
+    top: 10px;
+  }
+
+
+  .search-modal-body .message-avatar {
+    font-size: 4vw;
+  }
+
+  .search-modal-body .message-body p {
+    font-size: 2.5vw;
+  }
+
+  .search-modal-body .message {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .menu {
+    width: 100%;
+    z-index: 50;
+  }
+
+  .layer {
+    position: absolute;
+    margin: 0;
+    margin-top: 2vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65vw;
+  }
+
+  .buttonContent {
+    font-size: 2.5vw;
+  }
+
+  .modal-body-main {
+    display: block;
+  }
+
+  .modal-content .main .outerButton {
+    width: 40%;
+    display: block;
+  }
+
+
+  .outerButton {
+    min-height: 60px;
+  }
+
+  .return {
+    font-size: 1.8vw;
+  }
+
+  .header {
+    font-size: 3vw;
+    height: 10%;
+    margin-bottom: 10px;
+  }
+
+  .boxData label {
+    font-size: 2.3vw;
+    margin-top: 10px;
+  }
+
+  .boxData .field {
+    width: 75%;
+    font-size: 2vw;
+  }
+
+  .file-label {
+    font-size: 2.5vw !important;
+  }
+
+  .pret {
+    font-size: 2.2vw !important;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  .payments .content {
+    font-size: 2.5vw !important;
+  }
+
+  .payments {
+    width: 60%;
+  }
+
+  .modal-body-pay input,
+  select,
+  button {
+    font-size: 2vw !important;
+  }
+
+  .years select {
+    overflow-y: scroll;
+  }
+
+  .modal-body-adjust label {
+    font-size: 2.5vw !important;
+  }
+
+  .input-price {
+    font-size: 2.5vw !important;
+  }
+
+
+}
+
+
+
+/*back to desktop size*/
+@media only screen and (min-width:1278px) {
+
+  #close:hover i,
+  #search:hover i {
+    transform: scale(1.2) !important;
+  }
+
+  .menuButton {
+    display: none;
+  }
+
+  .menu {
+    display: block !important;
+    animation: none;
+    min-width: 500px;
+    width: 28%;
+  }
+
+  .layer {
+    height: 80%;
+    width: 64%;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    z-index: 2;
+    margin-top: 2vh;
+  }
+
+}

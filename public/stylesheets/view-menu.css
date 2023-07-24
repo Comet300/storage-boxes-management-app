@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Dosis&display=swap');
+
+body {
+    margin: 0;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lexend Deca', sans-serif;
+    overflow-Y: hidden !important;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+*{
+    zoom: 100%;
+}
+
+.header {
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    width: 100%;
+    color: #fff;
+    font-size: 3.5vw;
+    position: relative;
+    top: .5vh;
+    height: auto;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+.boxContent {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.boxData::-webkit-scrollbar {
+    width: 0;
+}
+
+.boxContent::-webkit-scrollbar {
+    width: 0;
+}
+
+.payments {
+    height: 24vh;
+    width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-top: 20px;
+}
+
+.payments::-webkit-scrollbar {
+    width: 7px;
+}
+
+.payments::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.payments::-webkit-scrollbar-thumb {
+    padding: 35px;
+    background: #444;
+    border-radius: 50px;
+}
+
+.payments::-webkit-scrollbar-thumb:hover,
+.payments::-webkit-scrollbar-thumb:active {
+    background: #666;
+}
+
+.paymentEntry {
+    height: 6.05vh;
+    width: 100%;
+}
+
+.payments .content {
+    color: #fff;
+    pointer-events: none;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3.5vw;
+}
+
+.payments .content * {
+    display: inline-block;
+}
+
+.payments .content .date {
+    margin-left: 10%;
+}
+
+.payments .content .sum {
+    float: right;
+    margin-right: 10%;
+}
+
+@media only screen and (max-width: 250px) {
+    .payments .content * {
+        display: block;
+        float: none;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .payments .content .sum {
+        margin-right: 0;
+    }
+
+    .payments .content .date {
+        margin-left: 0;
+    }
+
+    .payments .content {
+        top: 40%;
+    }
+}
+
+.paymentEntry.paid {
+    background: #4DDB9C;
+    background-size: cover;
+    border-bottom: 1px solid white;
+}
+
+.paymentEntry.notPaid {
+    background: #CC6664;
+    background-size: cover;
+    border-bottom: 1px solid white;
+}
+
+.paymentEntry.unregistered {
+    background: #999;
+    background-size: cover;
+    border-bottom: 1px solid white;
+}
+
+
+
+.field {
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    margin: 5px;
+    border: none;
+    border-radius: 50px;
+    height: 0;
+    padding: 25px;
+    box-sizing: border-box;
+    font-size: 3.5vw;
+}
+
+.boxData label {
+    display: block;
+    position: relative;
+    left: 15%;
+    margin-top: 15px;
+    color: #fff;
+    font-size: 3vw;
+}
+
+
+/*
+@media only screen and (max-height:684px){
+    .boxData{
+        height: 140vh;
+    }
+}
+*/
+
+/*====================================*/
+
+.input-file {
+    display: none;
+}
+
+.input-file-trigger {
+    background-color: #149dff;
+    color: #fff;
+    height: auto;
+    width: max-content;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    transform: translateY(-25%);
+    transition: .4s;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.input-file-trigger:hover,
+.input-file-trigger:active {
+    background-color: #4EC5F1;
+}
+
+.input-file-trigger .file-label {
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    margin: 0;
+    margin: 0 auto !important;
+    left: 0;
+    font-size: 3.5vw;
+    text-align: center;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.positioner {
+    width: 100%;
+}
+
+.file-wrapper {
+    width: 75%;
+    display: block;
+    position: relative;
+    border: none;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15px;
+}
+
+.file-return {
+    display: none;
+}
+
+.pret * {
+    display: inline-block;
+}
+
+.pret {
+    width: auto;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    left: 15%;
+    color: white;
+    font-size: 3.3vw;
+}
+
+/*=======================================*/
+
+.outerButton {
+    outline: none;
+    min-width: 155px;
+    width: auto;
+    height: 5vh;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    margin: 5px;
+    position: relative;
+    min-height: 30px;
+}
+
+
+.outerButton:hover .buttonLogo,
+.outerButton:active .buttonLogo {
+    filter: brightness(1.12);
+}
+
+.buttonLogo {
+    display: block;
+    float: left;
+    height: 75%;
+    border-radius: 100px;
+    margin: 7.5px;
+    /*      (parent height - logo height)/2     */
+
+    pointer-events: none;
+    transition: .3s;
+}
+
+.action .buttonLogo {
+    background-color: #4DDB9C;
+}
+
+.edit .buttonLogo {
+    background-color: #4EC5F1;
+}
+
+.confirm .buttonLogo {
+    background-color: #4DDB9C;
+}
+
+.cancel .buttonLogo {
+    background-color: #CC6664;
+}
+
+.reset .buttonLogo {
+    background-color: #4EC5F1;
+}
+
+.buttonLogo img {
+    display: block;
+    height: 70%;
+    width: 70%;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: inherit;
+}
+
+.buttonContent {
+    font-size: 3vw;
+    font-weight: bold;
+    display: block;
+    overflow: hidden;
+    width: auto;
+    position: relative;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.control {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    bottom: 2vh;
+}
+
+.flexy {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*=================================*/
+
+.return {
+    margin: 2vw;
+    position: absolute;
+    top: 2vw;
+    display: inline-block;
+    font-size: 3vw;
+    /*font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+}
+
+.return:hover a,
+.return:active a {
+    color: rgba(0, 0, 0, 0.6);
+    ;
+}
+
+.return a {
+    color: rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.return a:visited {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
+/*========================================CLASE BUTON FISIER EJS=======================================*/
+
+.contractExistent::before {
+    content: "Deschide";
+}
+
+.contractInexistent::before {
+    content: "Inexistent";
+}
+
+.incarcaContract::before {
+    content: "Incarca...";
+}
+
+.schimbaContract::before {
+    content: "Schimba";
+}
+
+/*========================================================================================================*/
+
+.hide {
+    display: none;
+}
+
+/*========BROWSER SUPPORT========BROWSER SUPPORT========*/
+@-moz-document url-prefix() {
+    .input-file-trigger .file-label {
+        top: 50%;
+        left: 77%;
+        transform: translate(-50%, -50%);
+    }
+
+    .payments .date {
+        display: table;
+
+    }
+}
+
+@supports (-ms-accelerator:true) {
+    .input-file-trigger .file-label {
+        top: 50%;
+        left: 77%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    .input-file-trigger .file-label {
+        top: 50%;
+        left: 77%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+/*======================================================*/
+
+@media only screen and (max-width: 321px) {
+    .field {
+        padding: 10px;
+    }
+}
+
+
+@media only screen and (max-width: 505px) {
+    .field {
+        padding: 20px;
+    }
+
+    .height-fix {
+        height: 650px
+    }
+
+    .flexy {
+        margin: 0 auto;
+        justify-content: center;
+
+    }
+
+    .boxContent .outerButton {
+        min-width: unset;
+        display: inline-block;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .control .buttonContent {
+        display: none;
+
+    }
+
+    .boxData .pret .wrap {
+        display: block;
+    }
+
+}
+
+input:disabled {
+    background: #fff;
+}
+
+@-moz-document url-prefix() {
+    .input-file-trigger .file-label {
+        transform: none;
+    }
+
+    .payments .date {
+        display: unset;
+    }
+}
+
+
+.errorText {
+    position: absolute;
+    z-index: 100;
+    color: #fff;
+    font-size: 4.5vw;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.invalid:invalid {
+    border: 2px solid red;
+    box-shadow: 0 0 1px 0px red inset, 0 0 1px 0px red;
+}
+
+.invalid:valid {
+    border: 2px solid green;
+}
+
+.absInvalid {
+    border: 2px solid red !important;
+    box-shadow: 0 0 1px 0px red inset, 0 0 1px 0px red;
+}
+
+.absValid {
+    border: 2px solid green;
+    box-shadow: 0 0 1px 0px green inset, 0 0 1px 0px green;
+}
+
+.modal-body-pay form {
+    display: none;
+}
+
+.everything {
+    opacity: 0 !important;
+    animation: pop;
+    animation-duration: .2s;
+    animation-delay: .25s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes pop {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-device-width:1278px) {
+    .everything {
+        animation-delay: 0s;
+        animation-duration: .25s;
+    }
+}
+
+#contractName{
+    display:none;
+}

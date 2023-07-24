@@ -1,0 +1,39 @@
+<svg id="parter" class="layer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1199.91 2012.29" width="100%">
+        <rect class="boxa-libera" y="1694.48" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(187.51 1823.7)">P1S</text></g>
+        <rect class="boxa-libera" y="1482.68" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(187.51 1615.21)">P2S</text></g>
+        <rect class="boxa-libera" y="1270.87" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(187.51 1400.62)">P3S</text>
+        <rect class="boxa-libera" y="1059.07" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(187.51 1190.79)">P4S</text>
+        <rect class="boxa-libera" y="847.27" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(187.51 980.96)">P5S</text>
+        <rect class="boxa-libera" y="635.4" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(187.51 772.7)">P6S</text>
+        <rect class="boxa-libera" y="423.6" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(187.51 558.11)">P7S</text>
+        <rect class="boxa-libera" y="211.8" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(187.51 343.52)">P8S</text>
+        <rect class="boxa-libera" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(187.51 127.3)">P9S</text>
+        <rect class="boxa-libera" x="700.38" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(882.99 127.3)">P7D</text>
+        <rect class="boxa-libera" x="700.38" y="211.8" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(882.99 337.13)">P6D</text>
+        <rect class="boxa-libera" x="700.38" y="423.6" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(882.99 551.79)">P5D</text>
+        <rect class="boxa-libera" x="700.38" y="635.4" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(882.99 772.7)">P4D</text>
+        <rect class="boxa-libera" x="700.38" y="847.27" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(882.99 980.96)">P3D</text>
+        <rect class="boxa-libera" x="700.38" y="1059.07" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(882.99 1190.79)">P2D</text>
+        <rect class="boxa-libera" x="700.38" y="1270.87" width="499.53" height="199.83" /><text class="svg-text"
+            transform="translate(882.99 1400.62)">P1D</text>
+        <polygon class="boxa-libera"
+            points="1199.91 2004.18 1004.1 2006.22 700.38 1482.68 1199.91 1482.68 1199.91 2004.18" /><text
+            class="svg-text" transform="translate(932.26 1744.41)">Birou</text>
+        <rect class="boxa-libera" y="1908.09" width="499.53" height="98.14" /><text class="svg-text"
+            transform="translate(187.51 1985.78)">P0S</text>
+    </svg>

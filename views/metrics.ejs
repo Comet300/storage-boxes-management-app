@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Statistici Boxe</title>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://unpkg.com/flickity@2.0.5/dist/flickity.min.css" />
+		<link rel="stylesheet" href="/stylesheets/metrics.css" />
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+		<link rel="manifest" href="assets/favicon/manifest.json" />
+		<link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffffff" />
+	</head>
+
+	<body>
+		<%var hale=["Hala 1","Hala 2","Hala 3","Hala 4","Hala 5","Hala 6","Hala 7","Hala 8", "Hala 10"]%>
+
+		<section class="home-section">
+			<header>
+				<div class="container">
+					<div class="logo">
+						<a href="/"><img src="assets/logo-full.svg" alt="logo" /></a>
+					</div>
+					<div class="ham-menu">
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 172 172" style="fill: #000000">
+								<g
+									fill="none"
+									fill-rule="nonzero"
+									stroke="none"
+									stroke-width="1"
+									stroke-linecap="butt"
+									stroke-linejoin="miter"
+									stroke-miterlimit="10"
+									stroke-dasharray=""
+									stroke-dashoffset="0"
+									font-family="none"
+									font-weight="none"
+									font-size="none"
+									text-anchor="none"
+									style="mix-blend-mode: normal"
+								>
+									<path d="M0,172v-172h172v172z" fill="none"></path>
+									<g fill="#000000">
+										<path
+											d="M10.32,30.96c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h151.36c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058zM10.32,82.56c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h151.36c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058zM10.32,134.16c-1.24059,-0.01754 -2.39452,0.63425 -3.01993,1.7058c-0.62541,1.07155 -0.62541,2.39684 0,3.46839c0.62541,1.07155 1.77935,1.72335 3.01993,1.7058h151.36c1.24059,0.01754 2.39452,-0.63425 3.01993,-1.7058c0.62541,-1.07155 0.62541,-2.39684 0,-3.46839c-0.62541,-1.07155 -1.77935,-1.72335 -3.01993,-1.7058z"
+										></path>
+									</g>
+								</g>
+							</svg>
+						</div>
+					</div>
+					<nav class="nav-class">
+						<ul>
+							<li><a class="active-link">EVIDENTA</a></li>
+							<li><a>INCASARI</a></li>
+							<li><a>ISTORIC</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+			<div id="evidenta">
+				<div class="general chart-container">
+					<canvas id="main" style="position: relative"></canvas>
+				</div>
+
+				<div class="tabele">
+					<div class="carousel" data-flickity='{ "wrapAround": true, "touchVerticalScroll": false, "dragThreshold": 20 }'>
+						<%for(let i=0;i< rez.length;i++){%>
+						<div class="carousel-cell">
+							<div class="table-item">
+								<h1><%=hale[i]%></h1>
+								<div>
+									<table class="boxa">
+										<thead>
+											<tr>
+												<th>Boxa</th>
+												<th>Dimensiunea</th>
+												<th>Libera</th>
+											</tr>
+										</thead>
+										<% evidenta[i].forEach(box=>{ %>
+										<tr>
+											<td><%=box.identificator%></td>
+											<td><%=box.dimensiune%></td>
+											<td>
+												<%if(box.liber){%> Da <%}else{%> Nu<%}%>
+												<div class="dot"></div>
+											</td>
+										</tr>
+										<% }) %>
+									</table>
+								</div>
+							</div>
+						</div>
+						<%} %>
+					</div>
+				</div>
+			</div>
+
+			<div id="incasari" class="hidden">
+				<div class="top-incasari">
+					<div class="wrap-incasari">
+						<canvas id="grafic-incasari" style="position: relative"></canvas>
+					</div>
+				</div>
+
+				<div class="bottom-incasari">
+					<div class="table-item">
+						<div>
+							<table class="boxa">
+								<thead>
+									<tr>
+										<th>Luna</th>
+										<th>Hala 1 <div class="th-dot"></div></th>
+										<th>Hala 2 <div class="th-dot"></div></th>
+										<th>Hala 3 <div class="th-dot"></div></th>
+										<th>Hala 4 <div class="th-dot"></div></th>
+										<th>Hala 5 <div class="th-dot"></div></th>
+										<th>Hala 6 <div class="th-dot"></div></th>
+										<th>Hala 7 <div class="th-dot"></div></th>
+										<th>Hala 8 <div class="th-dot"></div></th>
+										<th>Hala 10 <div class="th-dot"></div></th>
+										<th>Total <div class="th-dot"></div></th>
+									</tr>
+								</thead>
+								<% for( let i = achitarifull.length-1; i >= 0; i-- ) { %>
+								<tr>
+									<td><%=achitarifull[i].luna%></td>
+									<td><%=achitarifull[i].hala1.suma%></td>
+									<td><%=achitarifull[i].hala2.suma%></td>
+									<td><%=achitarifull[i].hala3.suma%></td>
+									<td><%=achitarifull[i].hala4.suma%></td>
+									<td><%=achitarifull[i].hala5.suma%></td>
+									<td><%=achitarifull[i].hala6.suma%></td>
+									<td><%=achitarifull[i].hala7.suma%></td>
+									<td><%=achitarifull[i].hala8.suma%></td>
+									<td><%=achitarifull[i].hala10.suma%></td>
+									<td
+										><%=achitarifull[i].hala1.suma+achitarifull[i].hala2.suma+achitarifull[i].hala3.suma+achitarifull[i].hala4.suma+achitarifull[i].hala5.suma+achitarifull[i].hala6.suma+achitarifull[i].hala7.suma+achitarifull[i].hala8.suma+achitarifull[i].hala10.suma%></td
+									>
+								</tr>
+								<% } %>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="istoric" class="hidden">
+				<div>
+					<h1>Istoric Hale</h1>
+					<div class="accordion">
+						<% for( let i = 0; i < his.length; i++ ) { %>
+						<div class="accordion-item">
+							<div class="accordion-item-header"> <%=hale[i]%> </div>
+							<div class="accordion-item-body">
+								<% if(his[i]) for( let j = his[i].length-1; j >= 0; j-- ){ let item=his[i][j]; %>
+								<div class="accordion-item-body-content">
+									<div class="historyItem">
+										<div class="box"
+											><%=item.box%> <%if(item.newBox){%>
+											<div><%=item.halaCurenta%></div>
+											<%}%>
+										</div>
+
+										<div class="action">
+											<%if(item.action=="new"){%>
+											<svg
+												version="1.1"
+												class="new"
+												xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink"
+												x="0px"
+												y="0px"
+												viewBox="0 0 492 492"
+												xml:space="preserve"
+											>
+												<g>
+													<g>
+														<path
+															d="M464.344,207.418l0.768,0.168H135.888l103.496-103.724c5.068-5.064,7.848-11.924,7.848-19.124
+                                               c0-7.2-2.78-14.012-7.848-19.088L223.28,49.538c-5.064-5.064-11.812-7.864-19.008-7.864c-7.2,0-13.952,2.78-19.016,7.844
+                                               L7.844,226.914C2.76,231.998-0.02,238.77,0,245.974c-0.02,7.244,2.76,14.02,7.844,19.096l177.412,177.412
+                                               c5.064,5.06,11.812,7.844,19.016,7.844c7.196,0,13.944-2.788,19.008-7.844l16.104-16.112c5.068-5.056,7.848-11.808,7.848-19.008
+                                               c0-7.196-2.78-13.592-7.848-18.652L134.72,284.406h329.992c14.828,0,27.288-12.78,27.288-27.6v-22.788
+                                               C492,219.198,479.172,207.418,464.344,207.418z"
+														/>
+													</g>
+												</g>
+											</svg>
+											<%}else if(item.action=="remove"){%>
+											<svg
+												version="1.1"
+												class="remove"
+												xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink"
+												x="0px"
+												y="0px"
+												viewBox="0 0 492 492"
+												xml:space="preserve"
+											>
+												<g>
+													<g>
+														<path
+															d="M464.344,207.418l0.768,0.168H135.888l103.496-103.724c5.068-5.064,7.848-11.924,7.848-19.124
+                                                   c0-7.2-2.78-14.012-7.848-19.088L223.28,49.538c-5.064-5.064-11.812-7.864-19.008-7.864c-7.2,0-13.952,2.78-19.016,7.844
+                                                   L7.844,226.914C2.76,231.998-0.02,238.77,0,245.974c-0.02,7.244,2.76,14.02,7.844,19.096l177.412,177.412
+                                                   c5.064,5.06,11.812,7.844,19.016,7.844c7.196,0,13.944-2.788,19.008-7.844l16.104-16.112c5.068-5.056,7.848-11.808,7.848-19.008
+                                                   c0-7.196-2.78-13.592-7.848-18.652L134.72,284.406h329.992c14.828,0,27.288-12.78,27.288-27.6v-22.788
+                                                   C492,219.198,479.172,207.418,464.344,207.418z"
+														/>
+													</g>
+												</g>
+											</svg>
+											<%}else if(item.action=="change"){%>
+											<svg
+												version="1.1"
+												class="change"
+												xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink"
+												x="0px"
+												y="0px"
+												viewBox="0 0 477.867 477.867"
+												style="enable-background: new 0 0 477.867 477.867"
+												xml:space="preserve"
+											>
+												<g>
+													<g>
+														<path
+															d="M460.8,221.867H185.31c-9.255-36.364-46.237-58.34-82.602-49.085c-24.116,6.138-42.947,24.969-49.085,49.085H17.067
+                    C7.641,221.867,0,229.508,0,238.934S7.641,256,17.067,256h36.557c9.255,36.364,46.237,58.34,82.602,49.085
+                    c24.116-6.138,42.947-24.969,49.085-49.085H460.8c9.426,0,17.067-7.641,17.067-17.067S470.226,221.867,460.8,221.867z
+                     M119.467,273.067c-18.851,0-34.133-15.282-34.133-34.133c0-18.851,15.282-34.133,34.133-34.133s34.133,15.282,34.133,34.133
+                    C153.6,257.785,138.318,273.067,119.467,273.067z"
+														/>
+													</g>
+												</g>
+												<g>
+													<g>
+														<path
+															d="M460.8,51.2h-53.623c-9.255-36.364-46.237-58.34-82.602-49.085C300.459,8.253,281.628,27.084,275.49,51.2H17.067
+                    C7.641,51.2,0,58.841,0,68.267s7.641,17.067,17.067,17.067H275.49c9.255,36.364,46.237,58.34,82.602,49.085
+                    c24.116-6.138,42.947-24.969,49.085-49.085H460.8c9.426,0,17.067-7.641,17.067-17.067S470.226,51.2,460.8,51.2z M341.334,102.4
+                    c-18.851,0-34.133-15.282-34.133-34.133s15.282-34.133,34.133-34.133s34.133,15.282,34.133,34.133S360.185,102.4,341.334,102.4z"
+														/>
+													</g>
+												</g>
+												<g>
+													<g>
+														<path
+															d="M460.8,392.534h-87.757c-9.255-36.364-46.237-58.34-82.602-49.085c-24.116,6.138-42.947,24.969-49.085,49.085H17.067
+                    C7.641,392.534,0,400.175,0,409.6s7.641,17.067,17.067,17.067h224.29c9.255,36.364,46.237,58.34,82.602,49.085
+                    c24.116-6.138,42.947-24.969,49.085-49.085H460.8c9.426,0,17.067-7.641,17.067-17.067S470.226,392.534,460.8,392.534z
+                     M307.2,443.734c-18.851,0-34.133-15.282-34.133-34.133s15.282-34.133,34.133-34.133c18.851,0,34.133,15.282,34.133,34.133
+                    S326.052,443.734,307.2,443.734z"
+														/>
+													</g>
+												</g>
+											</svg>
+											<%} else if (item.action=="move"){%>
+											<svg
+												version="1.1"
+												class="move"
+												xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink"
+												x="0px"
+												y="0px"
+												viewBox="0 0 512 512"
+												style="enable-background: new 0 0 512 512"
+												xml:space="preserve"
+											>
+												<path
+													class="st0"
+													d="M506.8,152.7l-172-94.4c-3-1.6-6.6-1.6-9.6,0l-64.7,35.5c-1.5,0.4-2.8,1.2-4,2.2l-103.3,56.7
+                c-3.2,1.8-5.2,5.1-5.2,8.8v20.4H32.6c-5.5,0-10,4.5-10,10c0,5.5,4.5,10,10,10H148v36H90.7c-5.5,0-10,4.5-10,10c0,5.5,4.5,10,10,10
+                H148v52H64c-5.5,0-10,4.5-10,10c0,5.5,4.5,10,10,10h84v20.4c0,3.6,2,7,5.2,8.8l172,94.4c1.5,0.8,3.2,1.2,4.8,1.2s3.3-0.4,4.8-1.2
+                l172-94.4c3.2-1.8,5.2-5.1,5.2-8.8v-44.8c0-5.5-4.5-10-10-10s-10,4.5-10,10v38.9l-152,83.5V261.8l48.3-26.5v42.1
+                c0,3.5,1.9,6.8,4.9,8.6c1.6,0.9,3.3,1.4,5.1,1.4c1.7,0,3.3-0.4,4.8-1.2l36.9-20.3c3.2-1.8,5.2-5.1,5.2-8.8V204l46.8-25.7v47.2
+                c0,5.5,4.5,10,10,10s10-4.5,10-10v-64.1C512,157.8,510,154.4,506.8,152.7z M320,427.9l-152-83.5V178.3l152,83.5V427.9z M330,244.5
+                l-151.2-83l47.5-26.1l151.2,83L330,244.5z M398.3,207l-151.2-83l16.4-9l151.2,83L398.3,207z M425.2,251.2l-16.9,9.3v-36.2l16.9-9.3
+                V251.2z M435.5,186.6l-151.2-83L330,78.4l151.2,83L435.5,186.6z"
+												/>
+												<path
+													class="st0"
+													d="M502,255.6c-2.6,0-5.2,1.1-7.1,2.9c-1.9,1.9-2.9,4.4-2.9,7.1c0,2.6,1.1,5.2,2.9,7.1s4.4,2.9,7.1,2.9
+                s5.2-1.1,7.1-2.9s2.9-4.4,2.9-7.1c0-2.6-1.1-5.2-2.9-7.1C507.2,256.6,504.6,255.6,502,255.6z"
+												/>
+												<path
+													class="st0"
+													d="M24.3,309.9H10c-5.5,0-10,4.5-10,10c0,5.5,4.5,10,10,10h14.3c5.5,0,10-4.5,10-10
+                C34.3,314.4,29.9,309.9,24.3,309.9z"
+												/>
+												<path
+													class="st0"
+													d="M60.7,247.9c0-2.6-1.1-5.2-2.9-7.1c-1.9-1.9-4.4-2.9-7.1-2.9c-2.6,0-5.2,1.1-7.1,2.9c-1.9,1.9-2.9,4.4-2.9,7.1
+                c0,2.6,1.1,5.2,2.9,7.1c1.9,1.9,4.4,2.9,7.1,2.9c2.6,0,5.2-1.1,7.1-2.9C59.6,253.1,60.7,250.5,60.7,247.9z"
+												/>
+											</svg>
+											<%}%>
+										</div>
+
+										<div class="client">
+											<%if(item.newBox){%>
+											<div class="box">
+												<%=item.newBox%>
+												<div><%=item.halaTinta%></div>
+											</div>
+											<%}%>
+											<div>
+												<p><%=item.nume%></p>
+												<p><%=item.email%></p>
+												<p><%=item.telefon%></p>
+											</div>
+										</div>
+
+										<div class="date"><%=item.date%></div>
+									</div>
+								</div>
+								<%}%>
+							</div>
+						</div>
+
+						<% } %>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script src="https://unpkg.com/flickity@2.0.5/dist/flickity.pkgd.min.js"></script>
+		<script>
+			var utils = {};
+			utils.modulo = function (num, div) {
+				return ((num % div) + div) % div;
+			};
+
+			var transformProperty = (function () {
+				var style = document.documentElement.style;
+				if (typeof style.transform == "string") {
+					return "transform";
+				}
+				return "WebkitTransform";
+			})();
+
+			Flickity.prototype.positionSlider = function () {
+				var x = this.x;
+
+				if (this.options.wrapAround && this.cells.length > 1) {
+					x = utils.modulo(x, this.slideableWidth);
+					x = x - this.slideableWidth;
+					this.shiftWrapCells(x);
+				}
+
+				x = x + this.cursorPosition;
+
+				x = this.options.rightToLeft && transformProperty ? -x : x;
+				var value = this.getPositionValue(x);
+
+				this.slider.style[transformProperty] = "translateX(" + value + ")";
+
+				var firstSlide = this.slides[0];
+				if (firstSlide) {
+					var positionX = -this.x - firstSlide.target;
+					var progress = positionX / this.slidesWidth;
+					this.dispatchEvent("scroll", null, [progress, positionX]);
+				}
+			};
+		</script>
+
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<script>
+
+
+			        let fontS;
+			        if(window.innerWidth<1280){
+			        fontS=9
+			            }
+			        else{
+			        fontS=12
+			            }
+
+			        var barChartData = {
+			            labels: ['Hala1', 'Hala2', 'Hala3', 'Hala4', 'Hala5' , 'Hala6','Hala7','Hala8', 'Hala 10'],
+			            datasets: [{
+			                label: 'Boxe ocupate',
+			                backgroundColor: "#CC6664",
+			                data: [ <% rez.forEach(item => {%>
+			                        <%=item.ocupate%>,<%})%>
+			                ]
+			            }, {
+			                label: 'Boxe libere',
+			                backgroundColor: "#4DDB9C",
+			                data: [ <%rez.forEach(item =>{%>
+			                        <%=item.libere%>,<%})%>
+			                ]
+			            }]
+
+			        };
+
+			            var ctx1 = document.getElementById('main').getContext('2d');
+			            window.myBar = new Chart(ctx1, {
+			                type: 'bar',
+			                data: barChartData,
+			                options: {
+			                    animation: {
+			            duration: 0
+			        },
+			        responsiveAnimationDuration: 0,
+			                    title: {
+			                        display: true,
+			                        text: 'Grafic boxe libere/ocupate'
+			                    },
+			                    tooltips: {
+			                        mode: 'index',
+			                        intersect: false
+			                    },
+			                    responsive: true,
+			                    maintainAspectRatio: false,
+			                    scales: {
+			                        xAxes: [{
+			                            stacked: true,
+			                            ticks:{
+			                                fontSize:fontS
+			                            }
+			                        }],
+			                        yAxes: [{
+			                            stacked: true,
+			                            ticks:{
+			                                fontSize:fontS
+			                            }
+			                        }]
+			                    },
+			    legend:{
+			        labels:{
+			            fontSize:fontS
+			        }
+			    }
+			                }
+			            });
+
+
+			let datah1=[],datah2=[],datah3=[],datah4=[],datah5=[],datah6=[],datah7=[],datah8=[],datah10=[],datat=[];
+
+			let colors=["#E27D60","#b0b0b0","#8d65fc","#149dff","#fac45f","#856B6A","#000000","#985f34","#e8154e","#4DDB9C"];
+
+			let dots=document.querySelectorAll("#incasari th .th-dot");
+			for(let i=0;i<dots.length;i++){
+			    dots[i].style.backgroundColor=colors[i];
+			}
+
+			<%for(let i=0;i<achitari.length;i++){%>
+			    datah1.push(<%=achitari[i].hala1.suma%>);
+			    datah2.push(<%=achitari[i].hala2.suma%>);
+			    datah3.push(<%=achitari[i].hala3.suma%>);
+			    datah4.push(<%=achitari[i].hala4.suma%>);
+			    datah5.push(<%=achitari[i].hala5.suma%>);
+			    datah6.push(<%=achitari[i].hala6.suma%>);
+			    datah7.push(<%=achitari[i].hala7.suma%>);
+				datah8.push(<%=achitari[i].hala8.suma%>);
+				datah10.push(<%=achitari[i].hala10.suma%>);
+			    datat.push(<%=achitari[i].hala1.suma%>+<%=achitari[i].hala2.suma%>+<%=achitari[i].hala3.suma%>+<%=achitari[i].hala4.suma%>+<%=achitari[i].hala5.suma%>+<%=achitari[i].hala6.suma%>+<%=achitari[i].hala7.suma%>+<%=achitari[i].hala8.suma%>+<%=achitari[i].hala10.suma%>);
+			<%}%>
+
+			    var ctx2 = document.getElementById('grafic-incasari').getContext('2d');
+			    var myLineChart = new Chart(ctx2, {
+			    type: 'line',
+			    data: {
+			        labels:[
+			            <%for(let i=0;i<achitari.length;i++){%>
+			                "<%=achitari[i].luna%>",
+			                <%}%>
+			        ],
+			        datasets:[
+			            {
+			            label:"Hala 1",
+			            data:datah1,
+			            backgroundColor:colors[0],
+			            borderColor:colors[0],
+			            fill:false,
+			            hidden: true
+			        },
+			        {
+			            label:"Hala 2",
+			            data:datah2,
+			            backgroundColor:colors[1],
+			            borderColor:colors[1],
+			            fill:false,
+			            hidden: true
+			        },
+			        {
+			            label:"Hala 3",
+			            data:datah3,
+			            backgroundColor:colors[2],
+			            borderColor:colors[2],
+			            fill:false,
+			            hidden: true
+			        },
+			        {
+			            label:"Hala 4",
+			            data:datah4,
+			            backgroundColor:colors[3],
+			            borderColor:colors[3],
+			            fill:false,
+			            hidden: true
+			        },
+			        {
+			            label:"Hala 5",
+			            data:datah5,
+			            backgroundColor:colors[4],
+			            borderColor:colors[4],
+			            fill:false,
+			            hidden: true
+			        },
+			        {
+			            label:"Hala 6",
+			            data:datah6,
+			            backgroundColor:colors[5],
+			            borderColor:colors[5],
+			            fill:false,
+			            hidden: true
+			        },
+			        {
+			            label:"Hala 7",
+			            data:datah7,
+			            backgroundColor:colors[6],
+			            borderColor:colors[6],
+			            fill:false,
+			            hidden: true
+			        },
+					{
+			            label:"Hala 8",
+			            data:datah8,
+			            backgroundColor:colors[7],
+			            borderColor:colors[7],
+			            fill:false,
+			            hidden: true
+			        },
+					{
+			            label:"Hala 10",
+			            data:datah10,
+			            backgroundColor:colors[8],
+			            borderColor:colors[8],
+			            fill:false,
+			            hidden: true
+			        },
+			        {
+			            label:"Total",
+			            data:datat,
+			            backgroundColor:colors[9],
+			            borderColor:colors[9],
+			            fill:false
+			        }
+			    ]
+			    },
+			    options: {
+			        animation: {
+			            duration: 0
+			        },
+			        title: {
+			            display: true,
+			            text: 'Grafic incasari pe ultimele <%=achitari.length%> luni',
+			            fontSize:fontS+2
+			        },
+			        responsive: true,
+			        maintainAspectRatio: false,
+			        scales: {
+			            yAxes: [{
+			                ticks: {
+			                    beginAtZero: true,
+			                    fontSize:fontS
+			                }
+			            }],
+			            xAxes:[{
+			                ticks:{
+			                    fontSize:fontS-1
+			                }
+			            }]
+			        },
+			        tooltips: {
+			      mode: 'x-axis'
+			    },
+			    legend:{
+			        labels:{
+			            fontSize:fontS
+			        }
+			    }
+			    }
+
+			});
+		</script>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+		<script src="scripts/metrics.js"></script>
+	</body>
+</html>

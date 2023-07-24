@@ -1,0 +1,100 @@
+<%- include("../partials/header") %>
+<!--
+    Hala 2
+-->
+
+
+
+<div class="levelControl" onclick="event.stopPropagation()" onfocus="event.stopPropagation()">
+    <div class="up">
+        <svg class="control" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.6 75">
+            <polygon points="43.3 0 0 75 86.6 75 43.3 0" /></svg>
+    </div>
+    <p id="levelLabel">parter</p>
+    <div class="down">
+        <svg class="control" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.6 75">
+            <polygon points="43.3 0 0 75 86.6 75 43.3 0" /></svg>
+    </div>
+</div>
+<!--
+    ====================================================================================================================================
+    =======================================================  schema hala 2  ============================================================
+    ====================================================================================================================================
+-->
+
+<div id="mobile-div" class="container">
+    <svg id="parter" class="layer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 643 1550">
+        <rect class="B1" x="443" y="1150" width="200" height="400" />
+        <text class="svg-text" transform="translate(500.37 1371.04)">B1</text>
+        <rect class="B2" x="443" y="625" width="200" height="500" />
+        <text class="svg-text" transform="translate(501.18 896.04)">B2</text>
+        <rect class="B3" x="443" width="200" height="600" />
+        <text class="svg-text" transform="translate(501.18 321.04)">B3</text>
+        <rect class="B4" x="236" width="170" height="400" />
+        <text class="svg-text" transform="translate(278.37 221.04)">B4</text>
+        <rect class="B5" width="200" height="600" />
+        <text class="svg-text" transform="translate(57.37 321.04)">B5</text>
+        <rect class="B6" x="0.58" y="625.84" width="200" height="500" />
+        <text class="svg-text" transform="translate(57.76 896.18)">B6</text>
+        <rect class="B7" x="0.58" y="1149.84" width="200" height="400" />
+        <text class="svg-text" transform="translate(59.76 1370.18)">B7</text>
+    </svg>
+
+    <svg id="etaj" class="layer hide" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 643 1548">
+        <rect class="E1" x="443" y="1148" width="200" height="400" />
+        <text class="svg-text" transform="translate(502.32 1369.04)">E1</text>
+        <rect class="E2" x="443" y="624" width="200" height="500" />
+        <text class="svg-text" transform="translate(503.13 895.04)">E2</text>
+        <rect class="E3" x="443" width="200" height="600" />
+        <text class="svg-text" transform="translate(503.13 321.04)">E3</text>
+        <rect class="E4" x="236" width="170" height="400" />
+        <text class="svg-text" transform="translate(280.32 221.04)">E4</text>
+        <rect class="E5" width="200" height="600" />
+        <text class="svg-text" transform="translate(59.32 321.04)">E5</text>
+        <rect class="E6" x="0.58" y="623.84" width="200" height="500" />
+        <text class="svg-text" transform="translate(59.71 895.18)">E6</text>
+        <rect class="E7" x="0.58" y="1147.84" width="200" height="400" />
+        <text class="svg-text" transform="translate(59.71 1369.18)">E7</text>
+        <rect class="E8" x="236" y="624" width="170" height="300" />
+        <text class="svg-text" transform="translate(280.71 795.04)">E8</text>
+    </svg>
+
+</div>
+
+<script>
+    <%evidenta.forEach(item=>{%>
+        document.querySelector(".<%=item.identificator%>").classList.add("<%if(item.liber==true){%>boxa-libera<%}else{%>boxa-ocupata<%}%>");
+    <%})%>
+</script>
+
+
+<form action="#" action="GET" id="selectForm" target="iframe">
+    <input type="text" name="id-boxa" id="inputBoxa">
+</form>
+
+<!--
+    ===========================================================================================================================================================================================
+-->
+
+<div class="menu">
+    <iframe src="/hala2/view/B1" frameborder="0" id="iframe" name="iframe" onload="fadeIn(this)"></iframe>
+</div>
+
+<div class="sizeControl noselect">
+    <div class="plus control"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+            <path
+                d="M262.5,0H37.5A37.5,37.5,0,0,0,0,37.5v225A37.5,37.5,0,0,0,37.5,300h225A37.5,37.5,0,0,0,300,262.5V37.5A37.5,37.5,0,0,0,262.5,0Zm0,172.5H173V262H128V172.5H37.5v-45H128V37h45v90.5h89.5Z" />
+        </svg></div>
+    <div class="reset control"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+
+            <path
+                d="M262.5,0H37.5A37.5,37.5,0,0,0,0,37.5v225A37.5,37.5,0,0,0,37.5,300h225A37.5,37.5,0,0,0,300,262.5V37.5A37.5,37.5,0,0,0,262.5,0ZM69.82,199.89l-2-2L22,152l-4.92-4.92H55.54A94.76,94.76,0,0,1,150,55.49h.07a105.31,105.31,0,0,1,50.63,14.14l3.24,1.88-2.65,2.65L184.11,91.33l-1.48,1.48-1.87-1A70.92,70.92,0,0,0,150,84.16a66,66,0,0,0-65.74,63H122.6L117.68,152,71.86,197.86Zm206.18-47H244.46A94.78,94.78,0,0,1,150,244.51h-.07a105.31,105.31,0,0,1-50.63-14.14l-3.24-1.88,2.65-2.65,17.17-17.17,1.48-1.48,1.87.95a70.92,70.92,0,0,0,30.78,7.7,66,66,0,0,0,65.74-63H177.4l4.92-4.92,45.82-45.82,2-2,2,2L278,148l4.92,4.92Z" />
+        </svg></div>
+    <div class="minus control"><svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+
+            <path
+                d="M262.5,0H37.5A37.5,37.5,0,0,0,0,37.5v225A37.5,37.5,0,0,0,37.5,300h225A37.5,37.5,0,0,0,300,262.5V37.5A37.5,37.5,0,0,0,262.5,0Zm0,172.5H37.5v-45h225Z" />
+        </svg></div>
+</div>
+
+<%- include("../partials/footer") %>

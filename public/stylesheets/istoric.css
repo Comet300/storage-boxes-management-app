@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+*{
+    zoom: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: rgb(54, 209, 220);
+    background: linear-gradient(225deg, rgba(54, 209, 220, 1) 0%, rgba(91, 134, 229, 1) 100%);
+    Background-attachment: fixed
+}
+
+body>div {
+    position: relative;
+    top: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    padding-top: 3rem;
+    font-size: 2.5rem;
+}
+
+.accordion {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.accordion-item {
+    background-color: #fff;
+    color: #111;
+    margin: 1rem 0;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.accordion-item-header {
+    -webkit-user-select: none;
+    /* Chrome/Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+    padding: .8rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.accordion-item-header::after {
+    content: "\002B";
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+}
+
+.accordion-item-header.active::after {
+    content: "\2212";
+}
+
+.accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.accordion-item-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.accordion-item-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.accordion-item-body::-webkit-scrollbar-thumb {
+    padding: 25px;
+    background: #2f94d8;
+    border-radius: 50px;
+
+}
+
+.accordion-item-body::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: 10px;
+}
+
+.wrapper::-webkit-scrollbar-track-piece:start {
+    background: transparent;
+    margin-top: 10px;
+}
+
+.accordion-item-body::-webkit-scrollbar-thumb:hover,
+.accordion-item-body::-webkit-scrollbar-thumb:active {
+    background: rgb(13, 101, 160);
+}
+
+
+.accordion-item-body-content {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    line-height: 1.5rem;
+}
+
+.historyItem {
+    height: 105px;
+    width: 100%;
+    display: flex;
+}
+
+.historyItem .box {
+    justify-self: center;
+    align-self: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.historyItem .date {
+    align-self: center;
+    margin-left: auto;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.historyItem .client {
+    align-self: center;
+    margin: 0 auto;
+    display: flex;
+}
+
+.historyItem .client .box{
+    padding-right: 35px;
+}
+
+.historyItem .action {
+    align-self: center;
+    margin-left: 10%;
+}
+
+.historyItem .action svg.new {
+    width: 50px;
+    height: auto;
+    fill: #4DDB9C;
+}
+
+.historyItem .action svg.remove {
+    width: 50px;
+    height: auto;
+    fill: #CC6664;
+    transform-origin: 50% 50%;
+    transform: rotate(180deg);
+}
+
+.historyItem .action svg.change {
+    width: 50px;
+    height: auto;
+    fill: #4EC5F1;
+}
+
+.historyItem .action svg.move {
+    width: 60px;
+    height: auto;
+    fill: #4EC5F1;
+}
+
+
+.historyItem .box div{
+    text-align: center;
+}
+
+@media(max-width:767px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width:450px) and (orientation:portrait) {
+
+    .historyItem .action svg.change{
+        transform: translateY(3px);
+    }
+
+    .historyItem .action{
+        margin-left: 2%;
+    }
+
+    .accordion-item-header {
+        font-size: 16px;
+        min-height: 1.5rem;
+    }
+
+    h1 {
+        padding: .7rem;
+        font-size: 1.8rem;
+    }
+
+    .accordion {
+        margin: .5rem auto;
+    }
+
+    .historyItem {
+        height: unset;
+    }
+
+    .historyItem .box {
+        font-size: 14px;
+    }
+
+    .historyItem .action svg.new {
+        width: 22px;
+        transform: translateY(3px);
+    }
+
+    .historyItem .action svg.remove {
+        width: 22px;
+        transform: translateY(2px) rotate(180deg);
+    }
+
+    .historyItem .client .box{
+        padding: 4px;
+    }
+
+    .historyItem .action svg.change {
+        width: 22px;
+    }
+
+    .historyItem .action svg.move {
+        width: 30px;
+    }
+
+    .historyItem .action {
+        margin-left: 5px;
+    }
+
+    .historyItem .client p {
+        padding-left: 3px;
+        font-size: 9px;
+        line-height: 1.2rem;
+    }
+
+    .historyItem .date {
+        font-weight: unset;
+        font-size: 10px;
+    }
+
+}
+
+
+@media screen and (max-width:1280px) and (min-width:451px) and (orientation:portrait) {
+
+    .historyItem .action {
+    margin-left: 5%;
+    }
+
+    .historyItem .client .box{
+        padding:15px;
+        transform: translateX(-50%);
+    }
+
+    .historyItem .box{
+        font-size: 22px;
+    }
+
+}

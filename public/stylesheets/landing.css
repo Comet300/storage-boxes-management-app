@@ -1,0 +1,274 @@
+*{
+    zoom: 100%;
+}
+
+body {
+    background: rgb(54, 209, 220);
+    background: linear-gradient(-90deg, rgba(54, 209, 220, 1) 0%, rgba(91, 134, 229, 1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
+
+#indexFrame{
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 500;
+}
+
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}
+
+#circle {
+    height: 1000px;
+    width: 1000px;
+    background: rgba(255, 255, 255, .6);
+    position: absolute;
+    right: -150px;
+    top: -170px;
+    border-radius: 100vw;
+    z-index: 0;
+
+}
+
+#worker {
+    z-index: 1;
+    height: 800px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-70%);
+    right: 25px;
+}
+
+ul {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-150%, -50%);
+}
+
+ul li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 110px;
+    color: #fff;
+    list-style-type: none;
+    line-height: 150px;
+
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul li a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul li:after {
+    content: '';
+    position: relative;
+    top: -20px;
+    width: 0;
+    height: 5px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #fff;
+    transition: width .3s ease;
+    -webkit-transition: width .3s ease;
+}
+
+
+ul li:hover:after {
+    width: 100%;
+    background: #fff;
+}
+
+.logout {
+    position: relative;
+    top: 15px;
+    left: 15px;
+    font-size: 30px; 
+    z-index: 50;
+    margin-left: 5px;
+}
+
+.logout a{
+
+    color: rgba(255, 255, 255, .8);
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    pointer-events: all;
+}
+
+.logout[href="/statistici"]{
+    margin-left: 15px;
+}
+
+.logout:visited {
+    color: rgba(255, 255, 255, .8);
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 1920px) {
+    .logout {
+        font-size: 25px;
+    }
+
+    #worker {
+        transform: translateY(-55%);
+    }
+}
+
+@media screen and (max-width:1680px) {
+    .logout {
+        margin-left: unset;
+        display:block;
+    }
+    .logout[href="/statistici"]{
+        margin-top: 10px;
+        margin-left: unset;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+
+    .logout {
+        font-size: 20px;
+    }
+
+    ul li {
+        font-size: 90px;
+        line-height: 100px;
+    }
+
+    ul {
+        transform: translate(-160%, -50%);
+    }
+
+    #worker {
+        height: 600px;
+    }
+
+    #circle {
+        height: 800px;
+        width: 800px;
+    }
+
+}
+
+/*MOBILE*/
+
+@media screen and (orientation: portrait) and (max-width:1024px) {
+    #worker {
+        position: absolute;
+        transform: none;
+        top: unset;
+        bottom: 5%;
+        height: 350px;
+        right: -25px;
+    }
+
+    #circle {
+        height: 500px;
+        width: 500px;
+        top: unset;
+        right: -280px;
+        bottom: 100px;
+    }
+
+    ul {
+        left: 50%;
+        transform: translateX(-60%);
+        top: 12%;
+
+    }
+
+    ul li {
+        font-size: 70px;
+        line-height: 75px;
+    }
+
+}
+
+@media screen and (orientation: portrait) and (max-width:450px) {
+    .logout {
+        font-size: 12px;
+        top: 0;
+        left: 0;
+        display:inline-block;
+    }
+
+    .logout[href="/statistici"]{
+        margin-top:  unset;
+        margin-left: 10px;
+    }
+
+    #worker {
+        position: absolute;
+        top: unset;
+        bottom: 10px;
+        height: 180px;
+        right: -15px;
+    }
+
+    #circle {
+        height: 200px;
+        width: 200px;
+        right: -20px;
+        bottom: 0;
+
+    }
+
+    ul li {
+        font-size: 40px;
+        line-height: 40px;
+    }
+
+    ul li:after {
+        height: 2px;
+        top: -7px
+    }
+
+    ul{
+        top: 15%;
+    }
+}
+
+@media screen and (orientation: portrait) and (max-width:320px) {
+    ul li {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .logout {
+        font-size: 10px;
+    }
+
+}
+
+
+@media screen and (max-width:1680px) and (orientation:landscape) {
+    ul li {
+        line-height: 120px;
+    }
+}

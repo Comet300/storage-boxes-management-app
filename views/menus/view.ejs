@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/view-menu-min.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body id="iframeBody">
+    <span id="contractName"><%=boxInfo.contract%></span>
+
+    <div class="header">
+        <h1 class="identificator"><%=boxInfo.identificator%></h1>
+        <h1>&nbsp;- <%=dimensiune%></h1>
+    </div>
+
+    
+
+<%
+var messages=getMessages();
+
+if(messages.success){
+%>
+    <div class="alert successful">
+        <p><%=messages.success%></p>
+        <div class="close-alert"><i class='bx bx-x'></i></div>
+    </div>
+
+    <%}else if(messages.error){%>
+
+    <div class="alert error">
+        <p><%=messages.error%></p>
+        <div class="close-alert"><i class='bx bx-x'></i></div>
+      </div>
+
+<%}%>
+
+
+    <div class="boxContent">
+
+        <div class="boxData">
+            <form id="boxForm" method="POST" action="/<%=hala%>/box/<%=boxInfo.identificator%>/new">
+
+                <label for="nume">Nume client/Firma:</label>
+                <input name="nume" class="field Name" type="text" placeholder="ex: John Smith" value="<%=boxInfo.nume%>"
+                    required disabled />
+
+                <label for="telefon">Telefon:</label>
+                <input type="tel" class="field Phone" name="telefon" placeholder="ex: 0723 123 123"
+                    value="<%=boxInfo.telefon%>" required disabled />
+
+                <label for="email">Email:</label>
+                <input name="email" class="field Email" type="email" placeholder="ex: name@domain.smth"
+                    value="<%=boxInfo.email%>" disabled
+                    accept="/^(([^<>()\[\]\\.,;:\s@]+(\.[^<>()\[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/" />
+
+            </form>
+
+            <label for="contract">Contract:</label>
+
+            <div class="positioner">
+                <div class="file-wrapper">
+                    <div class="input-file-trigger">
+                        <form action="/<%=hala%>/upload/<%=boxInfo.identificator%>" method="POST" id="fileForm"
+                            enctype="multipart/form-data">
+                            <input class="input-file" id="my-file" type="file" value="" name="file" disabled>
+                            <input class="hiddenName" type="text" name="nume" style="display: none">
+                            <input class="hiddenPhone" type="tel" name="telefon" style="display: none">
+                            <input class="hiddenEmail" type="email" name="email" style="display: none">
+                        </form>
+                        <div class=file-label></div>
+
+                    </div>
+                    <p class="file-return"></p>
+                </div>
+            </div>
+            <div class="pret">
+                Pret Curent:
+                <div class="wrap">
+                    <div class="suma"><%=boxInfo.pretCurent%></div>
+                    <div class="moneda">RON</div>
+                </div>
+            </div>
+
+            <div class="payments">
+
+                <%boxInfo.achitari.forEach(item=>{%>
+                <div class="paymentEntry <%if(item.inregistrat==true){%>paid<%}else if(item.inregistrat==false && item.passed==true){%>notPaid<%}else{%>unregistered<%}%>">
+                    <div class="content">
+                        <div class="date"><p><%=item.date1%></p><p><%=item.date2%></p></div>
+                        <div class=" sum"><%if(item.suma){%> <%=item.suma%> <%}%></div>
+                    </div>
+                </div>
+
+
+                <%})%>
+
+            </div>
+
+            <div class="control-wrap">
+                <div class="control">
+
+                    <div class="flexy view-tab">
+                        <div class="outerButton edit">
+                            <div class="buttonLogo">
+                                <img src="/assets/edit.svg">
+                            </div>
+                            <div class="buttonContent">
+                                Editeaza
+                            </div>
+                        </div>
+
+                        <div class="outerButton action" id="action">
+                            <div class="buttonLogo">
+                                <img src="/assets/action.svg">
+                            </div>
+                            <div class="buttonContent">
+                                Actiuni
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="flexy edit-tab hide">
+                        <div class="errorText"></div>
+                        <div class="outerButton confirm">
+                            <div class="buttonLogo">
+                                <img src="/assets/check.svg">
+                            </div>
+                            <div class="buttonContent">
+                                Confirma
+                            </div>
+                        </div>
+
+                        <div class="outerButton reset">
+                            <div class="buttonLogo">
+                                <img src="/assets/reset.svg">
+                            </div>
+                            <div class="buttonContent">
+                                Reset
+                            </div>
+                        </div>
+
+                        <div class="outerButton cancel">
+                            <div class="buttonLogo">
+                                <img src="/assets/close.svg">
+                            </div>
+                            <div class="buttonContent">
+                                Anuleaza
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="actionModal">
+        <div class="modal-content">
+
+            <!-- Modal MAIN -->
+            <div class="modal-header main">
+                <span class="close">&times;</span>
+                <h2>Actiuni</h2>
+            </div>
+
+
+            <div class="modal-body-main main">
+                <div class="outerButton achitare">
+                    <div class="buttonLogo">
+                        <img src="/assets/payment.svg">
+                    </div>
+                    <div class="buttonContent">
+                        Achita
+                    </div>
+                </div>
+
+                <div class="outerButton modificare">
+                    <div class="buttonLogo">
+                        <img src="/assets/adjust.svg">
+                    </div>
+                    <div class="buttonContent">
+                        Pret
+                    </div>
+                </div>
+
+                <div class="outerButton mutare">
+                    <div class="buttonLogo">
+                        <img src="/assets/move.svg">
+                    </div>
+                    <div class="buttonContent">
+                        Muta
+                    </div>
+                </div>
+
+                <div class="outerButton eliberare">
+                    <div class="buttonLogo">
+                        <img src="/assets/clean2.svg">
+                    </div>
+                    <div class="buttonContent">
+                        Elibereaza
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal achitare -->
+
+            <div class="modal-header pay hide">
+                <span class="close">&times;</span>
+                <h2>Achita</h2>
+            </div>
+
+            <div class="modal-body-pay pay hide">
+                    <label>Perioada:</label>
+                    <div id="datepicker">
+                        <button id="datepicker-button">Alege perioada</button>
+                        <div class="datesPreview">
+                            <p class="date1"></p>
+                            <p class="date2"></p>
+                        </div>
+                        <div id="datepicker-container">
+                          <div class="datepicker-header">
+                            <button class="datepicker-button-change" id="datepicker-previous-button"> - </button>
+                            <div id="datepicker-indicator"></div>
+                            <button class="datepicker-button-change" id="datepicker-next-button"> + </button>
+                          </div>
+                          <ul id="datepicker-week-title"></ul>
+                          <div id="datepicker-body"></div>
+                          <div class="datepicker-footer">
+                            <span id="datepicker-selected-text"></span>
+                            <div>
+                              <button id="datepicker-clear-button"><svg id="check-mark" enable-background="new 0 0 515.556 515.556"
+                                  height="512" viewBox="0 0 515.556 515.556" width="512" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z" />
+                                </svg></button>
+                              <button id="datepicker-clear-button2"><svg version="1.1" id="reset-mark" xmlns="http://www.w3.org/2000/svg"
+                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14.155 14.155"
+                                  style="enable-background:new 0 0 14.155 14.155;" xml:space="preserve">
+                                  <g>
+                                    <path
+                                      d="M12.083,1.887c-0.795-0.794-1.73-1.359-2.727-1.697v2.135c0.48,0.239,0.935,0.55,1.334,0.95
+                                 c1.993,1.994,1.993,5.236,0,7.229c-1.993,1.99-5.233,1.99-7.229,0c-1.991-1.995-1.991-5.235,0-7.229
+                                 C3.466,3.269,3.482,3.259,3.489,3.25h0.002l1.181,1.179L4.665,0.685L0.923,0.68l1.176,1.176C2.092,1.868,2.081,1.88,2.072,1.887
+                                 c-2.763,2.762-2.763,7.243,0,10.005c2.767,2.765,7.245,2.765,10.011,0C14.844,9.13,14.847,4.649,12.083,1.887z" />
+                                  </g>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <div class="priceInputWrap">
+                          <label>Suma:</label>
+                        <input type="text" class="price" name="paymentPrice" accept="/^\d+$/" placeholder="Suma achitata">
+                    </div>
+
+                    <form action="/<%=hala%>/box/<%=boxInfo.identificator%>/pay" method="POST" id="payForm">
+                        <input type="text" id="date1" name="data1" required>
+                        <input type="text" id="date2" name="data2" required>
+                        <input type="text" class="paySum" name="suma" required>
+                    </form>
+                </p>
+
+                <div class="message">Nu ati completat toate datele</div>
+                
+                <div class="flexy">
+                    <div class="outerButton confirm">
+                        <div class="buttonLogo">
+                            <img src="/assets/check.svg">
+                        </div>
+                        <div class="buttonContent">
+                            Confirma
+                        </div>
+                    </div>
+
+                    <div class="outerButton cancel">
+                        <div class="buttonLogo">
+                            <img src="/assets/close.svg">
+                        </div>
+                        <div class="buttonContent">
+                            Anuleaza
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Modificare pret -->
+
+            <div class="modal-header adjust hide">
+                <span class="close">&times;</span>
+                <h2>Modifica pret</h2>
+            </div>
+
+            <div class="modal-body-adjust adjust hide">
+                <div class="area-wrap">
+                    <div class="pret" id="pret">
+                        Pret Curent:
+                        <div class="wrap">
+                            <div class="suma"><%=boxInfo.pretCurent%></div>
+                            <div class="moneda">RON</div>
+                        </div>
+                    </div>
+                    <form action="/<%=hala%>/box/<%=boxInfo.identificator%>/adjust" method="POST" id="adjustForm">
+                        <label for="pret-nou">Pret Nou:</label>
+                        <input type="text" class="input-price" name="pret-nou" accept="/^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/"
+                            placeholder="RON">
+                    </form>
+                </div>
+
+                <div class="flexy">
+                    <div class="outerButton confirm">
+                        <div class="buttonLogo">
+                            <img src="/assets/check.svg">
+                        </div>
+                        <div class="buttonContent">
+                            Confirma
+                        </div>
+                    </div>
+
+                    <div class="outerButton cancel">
+                        <div class="buttonLogo">
+                            <img src="/assets/close.svg">
+                        </div>
+                        <div class="buttonContent">
+                            Anuleaza
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Modal Mutare Boxa -->
+
+            <div class="modal-header move hide">
+                <span class="close">&times;</span>
+                <h2>Muta boxa</h2>
+            </div>
+
+
+            <div class="modal-body-move move hide">
+
+
+                <div class="selectBox">
+                    <label for="boxSelection">Boxa destinatie:</label>
+                    <div id="boxSelection">-</div>
+                    <form action="/<%=hala%>/box/<%=boxInfo.identificator%>/move" method="POST" id="moveForm"
+                        class="moveForm">
+                        <input type="text" value="" name="boxSelection" class="box">
+                        <input type="text" value="" name="hala" class="hala">
+                    </form>
+                </div>
+                <div class="limitBox">
+                    <div id="boxes">
+
+                        <div class="section"><div>Hala 1</div><div class="line"></div></div>
+                        <%Evidenta1.forEach(item=>{%>
+                        <%if(item.liber==true){%>
+                            <div class="boxLabel" hala="hala1"><div><%=item.identificator%></div></div>
+                            <%}%>
+                        <%})%>
+
+                        <div class="section"><div>Hala 2</div><div class="line"></div></div>
+                        <%Evidenta2.forEach(item=>{%>
+                        <%if(item.liber==true){%>
+                            <div class="boxLabel" hala="hala2"><div><%=item.identificator%></div></div>
+                            <%}%>
+                        <%})%>
+
+                        <div class="section"><div>Hala 3</div><div class="line"></div></div>
+                        <%Evidenta3.forEach(item=>{%>
+                        <%if(item.liber==true){%>
+                            <div class="boxLabel" hala="hala3"><div><%=item.identificator%></div></div>
+                            <%}%>
+                        <%})%>
+
+                        <div class="section"><div>Hala 4</div><div class="line"></div></div>
+                        <%Evidenta4.forEach(item=>{%>
+                        <%if(item.liber==true){%>
+                            <div class="boxLabel" hala="hala4"><div><%=item.identificator%></div></div>
+                            <%}%>
+                        <%})%>
+
+                        <div class="section"><div>Hala 5</div><div class="line"></div></div>
+                        <%Evidenta5.forEach(item=>{%>
+                        <%if(item.liber==true){%>
+                            <div class="boxLabel" hala="hala5"><div><%=item.identificator%></div></div>
+                            <%}%>
+                        <%})%>
+
+                        <div class="section"><div>Hala 6</div><div class="line"></div></div>
+                        <%Evidenta6.forEach(item=>{%>
+                        <%if(item.liber==true){%>
+                            <div class="boxLabel" hala="hala6"><div><%=item.identificator%></div></div>
+                            <%}%>
+                        <%})%>
+
+                        <div class="section"><div>Hala 7</div><div class="line"></div></div>
+                        <%Evidenta7.forEach(item=>{%>
+                        <%if(item.liber==true){%>
+                            <div class="boxLabel" hala="hala7"><div><%=item.identificator%></div></div>
+                            <%}%>
+                        <%})%>
+
+                        <div class="section"><div>Hala 8</div><div class="line"></div></div>
+                        <%Evidenta8.forEach(item=>{%>
+                        <%if(item.liber==true){%>
+                            <div class="boxLabel" hala="hala8"><div><%=item.identificator%></div></div>
+                            <%}%>
+                        <%})%>
+
+                        <div class="section"><div>Hala 10</div><div class="line"></div></div>
+                        <%Evidenta10.forEach(item=>{%>
+                        <%if(item.liber==true){%>
+                            <div class="boxLabel" hala="hala10"><div><%=item.identificator%></div></div>
+                            <%}%>
+                        <%})%>
+                    </div>
+                </div>
+
+                <div class="flexy">
+                    <div class="outerButton confirm">
+                        <div class="buttonLogo">
+                            <img src="/assets/check.svg">
+                        </div>
+                        <div class="buttonContent">
+                            Confirma
+                        </div>
+                    </div>
+
+                    <div class="outerButton cancel">
+                        <div class="buttonLogo">
+                            <img src="/assets/close.svg">
+                        </div>
+                        <div class="buttonContent">
+                            Anuleaza
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Modal CONFIRMARE -->
+
+            <div class="modal-header check hide">
+                <span class="close">&times;</span>
+                <h2>Sunteti sigur?</h2>
+            </div>
+
+            <div class="modal-body-confirm check hide">
+
+                <div class="flexy">
+                    <div class="outerButton confirm">
+                        <div class="buttonLogo">
+                            <img src="/assets/check.svg">
+                        </div>
+                        <div class="buttonContent">
+                            Confirma
+                        </div>
+                    </div>
+
+                    <div class="outerButton cancel">
+                        <div class="buttonLogo">
+                            <img src="/assets/close.svg">
+                        </div>
+                        <div class="buttonContent">
+                            Anuleaza
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!--
+        //<script src="/scripts/view.js"></script>
+        //<script src="/scripts/action-modal.js"></script>
+        //<script src="/scripts/move-modal.js"></script>
+    -->
+    
+        <script src="/scripts/view-min.js"></script>
+    
+
+</body>
+
+</html>

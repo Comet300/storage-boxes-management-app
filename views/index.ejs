@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Mosor Valentin Cristian" />
+		<meta name="copyright" content="ISC" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="stylesheets/landing-3.css" />
+		<link rel="stylesheet" href="/stylesheets/search-menu.css" />
+		<title>Boxe Depozitare</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+		<link rel="manifest" href="assets/favicon/manifest.json" />
+		<link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffffff" />
+	</head>
+
+	<body>
+		<div>
+			<span class="logout"><a href="/logout">Logout</a></span>
+			<span class="logout"><a href="/statistici">Statistici</a></span>
+		</div>
+
+		<div class="container">
+			<div class="searchbox">
+				<button class="btn-menu" id="close">
+					<svg
+						class="fas"
+						version="1.1"
+						id="Layer_1"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						x="0px"
+						y="0px"
+						viewBox="0 0 492 492"
+						style="enable-background: new 0 0 492 492"
+						xml:space="preserve"
+					>
+						<g>
+							<g>
+								<path
+									class="st0"
+									d="M300.2,246l184-184c5.1-5.1,7.9-11.8,7.9-19c0-7.2-2.8-14-7.9-19L468,7.9C463,2.8,456.2,0,449,0
+                       c-7.2,0-14,2.8-19,7.9L246,191.8L62,7.9C57,2.8,50.2,0,43,0c-7.2,0-14,2.8-19,7.9L7.9,24C-2.6,34.5-2.6,51.6,7.9,62l184,184
+                       L7.9,430C2.8,435,0,441.8,0,449s2.8,14,7.9,19L24,484.1c5.1,5.1,11.8,7.9,19,7.9c7.2,0,14-2.8,19-7.9l184-184l184,184
+                       c5.1,5.1,11.8,7.9,19,7.9h0c7.2,0,14-2.8,19-7.9l16.1-16.1c5.1-5.1,7.9-11.8,7.9-19s-2.8-14-7.9-19L300.2,246z"
+								/>
+							</g>
+						</g>
+					</svg>
+				</button>
+				<input type="text" placeholder="Cautati dupa nume, telefon sau email" name="search" class="search" />
+				<button class="btn-search" id="search">
+					<svg
+						class="fas fa-times"
+						version="1.1"
+						id="Capa_1"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						x="0px"
+						y="0px"
+						viewBox="0 0 511.999 511.999"
+						style="enable-background: new 0 0 511.999 511.999"
+						xml:space="preserve"
+					>
+						<g>
+							<g>
+								<path
+									d="M508.874,478.708L360.142,329.976c28.21-34.827,45.191-79.103,45.191-127.309c0-111.75-90.917-202.667-202.667-202.667
+                           S0,90.917,0,202.667s90.917,202.667,202.667,202.667c48.206,0,92.482-16.982,127.309-45.191l148.732,148.732
+                           c4.167,4.165,10.919,4.165,15.086,0l15.081-15.082C513.04,489.627,513.04,482.873,508.874,478.708z M202.667,362.667
+                           c-88.229,0-160-71.771-160-160s71.771-160,160-160s160,71.771,160,160S290.896,362.667,202.667,362.667z"
+								/>
+							</g>
+						</g>
+					</svg>
+				</button>
+			</div>
+
+			<div id="Modal" class="search-modal">
+				<div class="search-modal-body"> </div>
+			</div>
+
+			<nav>
+				<ul>
+					<li
+						><a style="color: #f8b862 !important" href="https://docs.google.com/spreadsheets/d/15B0OkW87PIIzOsfLB0cWxYiVRHbpA8XB/edit#gid=1996952354"
+							>TABELE</a
+						></li
+					>
+
+					<li><a href="/hala1">HALA 1</a></li>
+					<li><a href="/hala2">HALA 2</a></li>
+					<li><a href="/hala3">HALA 3</a></li>
+					<li><a href="/hala4">HALA 4</a></li>
+					<li><a href="/hala5">HALA 5</a></li>
+					<li><a href="/hala6">HALA 6</a></li>
+					<li><a href="/hala7">HALA 7</a></li>
+					<li><a href="/hala8">HALA 8</a></li>
+					<li><a href="/hala10">HALA 10</a></li>
+				</ul>
+			</nav>
+			<img id="worker" src="assets/worker.svg" />
+			<div id="circle"></div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="/scripts/search-min.js"></script>
+		<script>
+					$("#search").click(function () {
+						let container=document.querySelector(".search-modal-body");
+						container.innerHTML="";
+			            let data=[]
+
+
+
+						//POPULATE DATA
+						<%	boxes1.forEach(element => {
+								if(element.nume!=''){	%>
+								data.push({identificator:"<%=element.identificator%>",nume:"<%=element.nume%>",telefon:"<%=element.telefon%>",email:"<%=element.email%>", hala:"H1"});
+			                <%	}});	%>;
+
+			                <%	boxes2.forEach(element => {
+								if(element.nume!=''){	%>
+								data.push({identificator:"<%=element.identificator%>",nume:"<%=element.nume%>",telefon:"<%=element.telefon%>",email:"<%=element.email%>", hala:"H2"});
+			                <%	}});	%>;
+
+			                <%	boxes3.forEach(element => {
+								if(element.nume!=''){	%>
+								data.push({identificator:"<%=element.identificator%>",nume:"<%=element.nume%>",telefon:"<%=element.telefon%>",email:"<%=element.email%>", hala:"H3"});
+			                <%	}});	%>;
+
+			                <%	boxes4.forEach(element => {
+								if(element.nume!=''){	%>
+								data.push({identificator:"<%=element.identificator%>",nume:"<%=element.nume%>",telefon:"<%=element.telefon%>",email:"<%=element.email%>", hala:"H4"});
+			                <%	}});	%>;
+
+			                <%	boxes5.forEach(element => {
+								if(element.nume!=''){	%>
+								data.push({identificator:"<%=element.identificator%>",nume:"<%=element.nume%>",telefon:"<%=element.telefon%>",email:"<%=element.email%>", hala:"H5"});
+			                <%	}});	%>;
+
+			                <%	boxes6.forEach(element => {
+								if(element.nume!=''){	%>
+								data.push({identificator:"<%=element.identificator%>",nume:"<%=element.nume%>",telefon:"<%=element.telefon%>",email:"<%=element.email%>", hala:"H6"});
+							<%	}});	%>;
+
+							<%	boxes7.forEach(element => {
+								if(element.nume!=''){	%>
+								data.push({identificator:"<%=element.identificator%>",nume:"<%=element.nume%>",telefon:"<%=element.telefon%>",email:"<%=element.email%>", hala:"H7"});
+							<%	}});	%>;
+
+							<%	boxes8.forEach(element => {
+								if(element.nume!=''){	%>
+								data.push({identificator:"<%=element.identificator%>",nume:"<%=element.nume%>",telefon:"<%=element.telefon%>",email:"<%=element.email%>", hala:"H8"});
+							<%	}});	%>;
+
+							<%	boxes10.forEach(element => {
+								if(element.nume!=''){	%>
+								data.push({identificator:"<%=element.identificator%>",nume:"<%=element.nume%>",telefon:"<%=element.telefon%>",email:"<%=element.email%>", hala:"H10"});
+							<%	}});	%>;
+
+
+
+						let searchInput = document.querySelector(".searchbox input");
+
+						if (searchInput.value == "") {
+			                generateEntries(data,container);
+						}else{
+							let foundData=[];
+
+							for(let i=0;i<data.length;i++){
+								if(data[i].nume.toLowerCase().includes(searchInput.value.toLowerCase())||data[i].telefon.toLowerCase().includes(searchInput.value.toLowerCase())||data[i].email.toLowerCase().includes(searchInput.value.toLowerCase())){
+									foundData.push(data[i]);
+								}
+							}
+							generateEntries(foundData,container);
+						}
+
+
+					});
+
+			                    var itemCount=0;
+			                    var delay=0.3;
+			                    var unit =0.03;
+
+								async function generateEntries(data,container){
+
+								for(i=0;i<data.length;i++){
+
+								let message=document.createElement("div");
+								message.classList.add("message")
+
+								let avatar=document.createElement("div");
+								avatar.classList.add("message-avatar");
+
+								let text=document.createElement("div");
+								text.classList.add("text");
+			                    text.textContent=data[i].identificator;
+
+			                    let hala=document.createElement("div");
+			                    hala.classList.add("text");
+			                    hala.textContent=data[i].hala;
+
+
+			                    avatar.appendChild(text);
+			                    avatar.appendChild(hala);
+
+								let messagebody=document.createElement("div");
+								messagebody.classList.add("message-body");
+
+								let p1=document.createElement("p");
+								p1.textContent=data[i].nume;
+
+								let p2=document.createElement("p");
+								p2.textContent=data[i].telefon;
+
+								let p3=document.createElement("p");
+								p3.textContent=data[i].email;
+
+								messagebody.appendChild(p1);
+								messagebody.appendChild(p2);
+			                    messagebody.appendChild(p3);
+
+
+								message.appendChild(avatar);
+								message.appendChild(messagebody);
+
+			                    container.appendChild(message);
+
+			                    if(itemCount>15){
+			                        delay=0;
+			                    }
+
+								message.style.animationDelay=""+delay+"s"
+			                    delay=delay+unit;
+			                    itemCount++;
+
+								messagebody.style.pointerEvents="none";
+								avatar.style.pointerEvents="none";
+
+			                    let halaTinta;
+			                    if(data[i].hala=="H1")
+			                        halaTinta="hala1";
+			                    else if(data[i].hala=="H2")
+			                        halaTinta="hala2";
+			                    else if(data[i].hala=="H3")
+			                        halaTinta="hala3";
+			                    else if(data[i].hala=="H4")
+			                        halaTinta="hala4";
+			                    else if(data[i].hala=="H5")
+			                        halaTinta="hala5";
+			                    else if(data[i].hala=="H6")
+			                        halaTinta="hala6";
+			                    else if(data[i].hala=="H7")
+			                        halaTinta="hala7";
+								else if(data[i].hala=="H8")
+			                        halaTinta="hala8";
+			                    let boxaTinta=data[i].identificator;
+
+								message.addEventListener("click",e=>{
+									if(e.target.classList.contains("message")){
+									window.location.assign(`/${halaTinta}?h=${boxaTinta}`);
+								}
+								});
+
+							}
+
+							let end=document.createElement("div");
+							end.classList.add("end");
+
+							let endFiller1=document.createElement("div");
+							endFiller1.classList.add("endFiller");
+
+							let endText=document.createElement("div");
+							endText.classList.add("endText");
+							endText.textContent="sfarsitul rezultatelor";
+
+							let endFiller2=document.createElement("div");
+							endFiller2.classList.add("endFiller");
+
+							end.appendChild(endFiller1);
+							end.appendChild(endText);
+							end.appendChild(endFiller2);
+
+							container.appendChild(end);
+
+					}
+
+
+			$("#close").click(function () {
+			    delay=0.3;
+			    itemCount=0;
+				let container=document.querySelector(".search-modal-body");
+				container.innerHTML="";
+				let searchInput = document.querySelector(".searchbox input");
+				searchInput.value="";
+			})
+
+			$("#search").click(function(){
+			    delay=0.3;
+			    itemCount=0;
+			})
+		</script>
+	</body>
+</html>

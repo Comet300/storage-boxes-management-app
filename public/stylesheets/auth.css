@@ -1,0 +1,391 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: rgb(54, 209, 220);
+    background: linear-gradient(225deg, rgba(54, 209, 220, 1) 0%, rgba(91, 134, 229, 1) 100%);
+}
+
+*{
+    zoom: 100%;
+}
+
+body>div {
+    width: 100vw;
+    height: 100vh;
+}
+
+.authWrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 5px;
+    width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-top: 65px;
+    padding-bottom: 54px;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+
+.authWrap .link-background>div {
+    position: relative;
+}
+
+.authWrap .link-background {
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.authWrap .link-background::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #ccc;
+}
+
+.authWrap .link-background>div {
+    margin: 0;
+    padding: 0;
+}
+
+.authWrap .link-background>div::after {
+    content: '';
+    position: absolute;
+    z-index: 50;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    left: 0;
+    background: #656565;
+    transition: width .5s ease;
+    -webkit-transition: width .5s ease;
+}
+
+.authWrap .link-background>div.change:after {
+    width: 100%;
+    left: 0;
+    background: #656565;
+}
+
+
+.link-background>div::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+a.left:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+.authWrap form input {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.2;
+    display: inline-block;
+    height: 55px;
+    background: transparent;
+    padding: 0 7px 0 43px;
+    border: none;
+    width: 80%;
+    padding: 15px;
+    outline: none;
+    margin: 0;
+    text-decoration: none;
+    padding-bottom: 0;
+}
+
+.authWrap form input:-webkit-autofill,
+.authWrap form input:-webkit-autofill:hover,
+.authWrap form input:-webkit-autofill:focus,
+.authWrap form input:-webkit-autofill:active {
+    box-shadow: 100vw 100vh white inset !important;
+    -webkit-box-shadow: 100vw 100vh white inset !important;
+    text-decoration: none;
+}
+
+.authWrap form .fieldIcon {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    color: #adadad;
+    fill: #adadad;
+    ;
+}
+
+.authWrap form .fieldIcon div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    float: left;
+}
+
+.authWrap form .fieldIcon svg {
+    fill: #ababab;
+    width: 100%;
+}
+
+.authWrap form label {
+    color: #333333;
+    line-height: 1.5;
+    padding-left: 7px;
+}
+
+.authWrap h1 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 50px;
+}
+
+.authWrap.recover h1 {
+    font-size: 30px;
+}
+
+.authWrap .forgotPass {
+    width: 100%;
+    position: relative;
+    text-align: right;
+}
+
+.authWrap .forgotPass a {
+    text-decoration: none;
+    color: #777777;
+}
+
+.authWrap .forgotPass a:link,
+a:visited {
+    color: #777777;
+    transition: .3s;
+}
+
+.authWrap .forgotPass a:hover {
+    color: #000;
+}
+
+.authWrap form button,
+.registerWrap form div.submit,
+.resetWrap form div.submit {
+    border: none;
+    width: 90%;
+    margin-top: 50px;
+    height: 50px;
+    border-radius: 50px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+
+    font-size: 20px;
+    color: white;
+
+    transition: .5s all;
+
+    background: rgb(54, 209, 220);
+    background: linear-gradient(90deg, rgba(54, 209, 220, 1) 0%, rgba(91, 134, 229, 1) 100%);
+}
+
+.authWrap form button:hover,
+.registerWrap form div.submit:hover,
+.resetWrap form div.submit:hover {
+    filter: brightness(1.15);
+}
+
+.registerWrap form div.submit,
+.resetWrap form div.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authWrap .signUp {
+    padding-top: 155px;
+}
+
+.authWrap .signUp .signUpLabel {
+    color: #777777;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.authWrap .signUp .signUpLink {
+    color: #777777;
+    text-align: center;
+}
+
+.authWrap .signUp .signUpLink a {
+    text-decoration: none;
+    color: #777777;
+    transition: .3s;
+}
+
+.authWrap .signUp .signUpLink a:hover {
+    color: #000
+}
+
+.authWrap .signUp a:link,
+.authWrap .signUp a:visited {
+    color: #777777;
+}
+
+.authWrap .contExistent {
+    text-align: right;
+}
+
+.authWrap .contExistent a {
+    text-decoration: none;
+    color: #777777;
+    transition: .3s;
+}
+
+.authWrap .contExistent a:hover {
+    color: #000;
+}
+
+.authWrap .contExistent a:link,
+a:visited {
+    color: #777777;
+
+}
+
+.authWrap .err {
+    padding-left: 10px;
+    color: red;
+}
+
+.authWrap .parolaCunoscuta {
+    text-align: right;
+}
+
+.authWrap .parolaCunoscuta a {
+    text-decoration: none;
+    color: #777777;
+    transition: .3s;
+}
+
+.authWrap .parolaCunoscuta a:link,
+.authWrap .parolaCunoscuta a:visited {
+    color: #777777;
+}
+
+.authWrap .parolaCunoscuta a:hover {
+    color: #000;
+}
+
+.authWrap .msg {
+    color: green;
+    font-size: 17px;
+}
+
+
+@media screen and (min-width:651px) and (max-width:1440px){
+
+
+    body{
+        font-size: 14px;
+    }
+
+    .authWrap {
+        padding-top: 35px;
+        padding-bottom: 24px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .authWrap h1{
+        padding-bottom: 15px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-size: 35px;
+    }
+
+    .authWrap form input {
+        height: 45px;
+        font-size: 14px;
+        padding-top: 10px;
+    }
+
+
+}
+
+
+@media screen and (max-width: 650px) {
+
+    body{
+        font-size: 12px;
+    }
+
+    .authWrap {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 20px;
+        width: 80vw;
+    }
+
+    .authWrap h1 {
+        padding-bottom: 10px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-size: 30px;
+    }
+
+    .authWrap .signUp {
+        padding-top: 30px;
+    }
+
+    .authWrap form button,
+    .registerWrap form div.submit,
+    .resetWrap form div.submit {
+        margin-top: 25px;
+        height: 30px;
+        width: 75%;
+        font-size: 12px;
+    }
+
+    .authWrap .link-background {
+        margin-bottom: 25px;
+    }
+
+
+    .authWrap form input {
+        height: 35px;
+        font-size: 12px;
+        padding-top: 10px;
+    }
+
+    .authWrap form .fieldIcon {
+        height: 15px;
+        width: 15px;
+    }
+
+    .authWrap label{
+        position: relative;
+        top:5px;
+    }
+
+}

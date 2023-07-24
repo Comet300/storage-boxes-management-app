@@ -1,0 +1,341 @@
+/*====================   MODALS   ====================*/
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Dosis&display=swap');
+
+* {
+    font-family: 'Lexend Deca', sans-serif;
+    zoom: 100%;
+}
+
+
+.actionModal {
+    overflow: hidden;
+    display: none;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    -webkit-animation-name: fadeIn;
+    /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(241, 241, 241);
+    width: 100%;
+    min-height: 200px;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    background-color: #4EC5F1;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    color: white;
+    font-size: 6vw;
+    font-weight: bold;
+    right: 12.5vw;
+
+}
+
+.close:hover,
+.close:focus,
+.close:active {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    color: white;
+    position: relative;
+    left: 8%;
+}
+
+.modal-body-main {
+    position: relative;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: minmax(65px, 50%) minmax(65px, 50%);
+    grid-template-rows: minmax(65px, 50%) minmax(65px, 50%);
+    align-content: center;
+}
+
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.modal-body-main .outerButton {
+    width: 60%;
+    margin: 5px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+
+}
+
+.modal-body-main .buttonContent {
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+.action-button .text {
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.achitare .buttonLogo {
+    background-color: #64E7AD;
+}
+
+.modificare .buttonLogo {
+    background-color: #FFB13D;
+}
+
+.mutare .buttonLogo {
+    background-color: #3DAEFF;
+}
+
+.eliberare .buttonLogo {
+    background-color: #CC531D;
+}
+
+@media only screen and (max-width: 380px) {
+    .modal-body-main {
+        height: auto;
+        display: block;
+
+    }
+
+    .modal-body-main .outerButton {
+        display: block;
+    }
+
+    .hide {
+        display: none;
+    }
+
+}
+
+.hide {
+    display: none;
+}
+
+.modal-body-pay {
+    padding: 2px 16px;
+    position: relative;
+    left: 8%;
+    color: white;
+    font-size: 3.3vw;
+    height: auto;
+}
+
+
+#selectionForm{
+    visibility: hidden;
+    height: 0;
+}
+
+.modal-body-pay #selection{
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 3vw;
+    width: 30%;
+    text-align: center;
+    min-width: 110px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.modal-body-pay,
+select,
+button {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 8px;
+}
+
+select {
+    padding: 8px;
+}
+
+.monthly-wrp {
+    padding: 1em;
+    top: 6px;
+    z-index: 1000;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, .9);
+}
+
+
+.monthly-wrp .years {
+    margin-bottom: 0.8em;
+    text-align: center;
+    overflow: hidden;
+}
+
+.monthly-wrp .years select{
+        padding: 5px 8px 0px 5px;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+}
+
+.monthly-wrp .years select:focus{
+    outline: none;
+}
+.monthly-wrp .years select option{
+    padding: 3px;
+}
+
+.monthly-wrp .years select {
+    border: 0;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.monthly-wrp .years select:focus {
+    outline: none;
+}
+
+.monthly-wrp table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.monthly-wrp td {
+    padding: 1px;
+}
+
+.monthly-wrp table button {
+    width: 100%;
+    border: none;
+    background-color: #3DAEFF;
+    color: #FFFFFF;
+    font-size: 3vw;
+    padding: 0.6em;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.monthly-wrp table button:hover,
+.monthly-wrp table button:active {
+    background-color: #3DAEFF;
+}
+
+.monthly-wrp table button:focus {
+    outline: none;
+}
+
+.hiddendiv {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    height: 250px;
+    width: 100%;
+    pointer-events: none;
+}
+
+.modal-body-pay .outerButton {
+    display: inline-block;
+    min-width: 150px;
+}
+
+.modal-body-pay .flexy {
+    margin: 0;
+}
+
+.modal-body-pay .buttonContent {
+    color: black;
+}
+
+@media only screen and (max-width: 350px) {
+    .hide {
+        display: none;
+    }
+
+    .modal-body-pay .buttonContent {
+        display: none;
+    }
+
+    .modal-body-pay .outerButton {
+        min-width: 0px;
+        width: auto;
+    }
+}
+
+.modal-body-main {
+    margin-bottom: 10px;
+}

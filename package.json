@@ -1,0 +1,41 @@
+{
+  "name": "gestiune-depozitare",
+  "version": "1.0.0",
+  "description": "gestiune depozitare, aplicatie depozitare-ieftina.ro",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js NODE_ENV=production"
+  },
+  "keywords": [
+    "gestiune",
+    "depozitare"
+  ],
+  "author": "Mosor Valentin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-session": "^1.4.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-flash-messages": "^0.1.1",
+    "express-sanitizer": "^1.0.5",
+    "fs": "0.0.1-security",
+    "gridfs-stream": "^1.1.1",
+    "helmet": "^3.22.0",
+    "http": "0.0.1-security",
+    "https": "^1.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.9",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.0.3",
+    "node-mailjet": "^3.3.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "q": "^1.5.1"
+  }
+}
